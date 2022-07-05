@@ -48,6 +48,7 @@ function Device () {
     var me = this;
 
     channel.onCordovaReady.subscribe(function () {
+        /*
         me.getInfo(
             function (info) {
                 // ignoring info.cordova returning from native, we should use value from cordova.version defined in cordova.js
@@ -79,6 +80,7 @@ function Device () {
                 console.error('[ERROR] Error initializing cordova-plugin-device: ' + e);
             }
         );
+        */
     });
 }
 
