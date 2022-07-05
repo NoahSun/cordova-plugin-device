@@ -53,7 +53,7 @@ function onDeviceReady() {
 
 ## Installation
 
-    cordova plugin add cordova-plugin-device
+    cordova plugin add git+https://github.com/NoahSun/cordova-plugin-device.git
 
 ## Properties
 
