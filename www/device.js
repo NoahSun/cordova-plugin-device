@@ -20,13 +20,13 @@
  */
 
 var argscheck = require('cordova/argscheck');
-var channel = require('cordova/channel');
+// var channel = require('cordova/channel');
 var exec = require('cordova/exec');
 var cordova = require('cordova');
 
-channel.createSticky('onCordovaInfoReady');
+// channel.createSticky('onCordovaInfoReady');
 // Tell cordova channel to wait on the CordovaInfoReady event
-channel.waitForInitialization('onCordovaInfoReady');
+// channel.waitForInitialization('onCordovaInfoReady');
 
 /**
  * This represents the mobile device, and provides properties for inspecting the model, version, UUID of the
@@ -78,12 +78,10 @@ Device.prototype.init = function (successCallback, errorCallback) {
                 me.sdkVersion = info.sdkVersion;
             }
             successCallback && successCallback(me);
-            channel.onCordovaReady.fire();
         },
         function (e) {
             me.available = false;
             errorCallback && errorCallback(e);
-            channel.onCordovaReady.fire();
             console.error('[ERROR] Error initializing cordova-plugin-device: ' + e);
         }
     );
