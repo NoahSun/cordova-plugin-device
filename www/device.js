@@ -78,10 +78,12 @@ Device.prototype.init = function (successCallback, errorCallback) {
                 me.sdkVersion = info.sdkVersion;
             }
             successCallback && successCallback(me);
+            channel.onCordovaReady.fire();
         },
         function (e) {
             me.available = false;
             errorCallback && errorCallback(e);
+            channel.onCordovaReady.fire();
             console.error('[ERROR] Error initializing cordova-plugin-device: ' + e);
         }
     );
