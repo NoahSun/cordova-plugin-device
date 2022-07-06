@@ -41,6 +41,9 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
    // can't get uuid, you should generated it by your self.
    console.log(device)
+   if(!device.uuid) {
+      // todo
+   }
 }
 ```
 
