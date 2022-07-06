@@ -24,9 +24,9 @@ var argscheck = require('cordova/argscheck');
 var exec = require('cordova/exec');
 var cordova = require('cordova');
 
-// channel.createSticky('onCordovaInfoReady');
+channel.createSticky('onCordovaInfoReady');
 // Tell cordova channel to wait on the CordovaInfoReady event
-// channel.waitForInitialization('onCordovaInfoReady');
+channel.waitForInitialization('onCordovaInfoReady');
 
 /**
  * This represents the mobile device, and provides properties for inspecting the model, version, UUID of the
@@ -44,6 +44,8 @@ function Device () {
     this.isVirtual = null;
     this.serial = null;
     this.isiOSAppOnMac = null;
+    
+    channel.onCordovaReady.fire();
 }
 
 /**
