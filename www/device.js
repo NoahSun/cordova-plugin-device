@@ -33,7 +33,7 @@ channel.waitForInitialization('onCordovaInfoReady');
  * phone, etc.
  * @constructor
  */
-function Device () {
+function Device() {
     this.available = false;
     this.platform = null;
     this.version = null;
@@ -44,11 +44,10 @@ function Device () {
     this.isVirtual = null;
     this.serial = null;
     this.isiOSAppOnMac = null;
-    
+
     var me = this;
 
     channel.onCordovaReady.subscribe(function () {
-        exec(successCallback, errorCallback, 'Device', 'getDeviceInfo', []);
         me.getInfo(
             function (info) {
                 // ignoring info.cordova returning from native, we should use value from cordova.version defined in cordova.js
