@@ -28,6 +28,8 @@ description: Get device information.
     Forked from apache/cordova-plugin-device.
     
     Simple change code to adapt privacy protocols in China.
+    
+    Just block java code about of get android_id.
 
 [![Android Testsuite](https://github.com/apache/cordova-plugin-device/actions/workflows/android.yml/badge.svg)](https://github.com/apache/cordova-plugin-device/actions/workflows/android.yml) [![Chrome Testsuite](https://github.com/apache/cordova-plugin-device/actions/workflows/chrome.yml/badge.svg)](https://github.com/apache/cordova-plugin-device/actions/workflows/chrome.yml) [![iOS Testsuite](https://github.com/apache/cordova-plugin-device/actions/workflows/ios.yml/badge.svg)](https://github.com/apache/cordova-plugin-device/actions/workflows/ios.yml) [![Lint Test](https://github.com/apache/cordova-plugin-device/actions/workflows/lint.yml/badge.svg)](https://github.com/apache/cordova-plugin-device/actions/workflows/lint.yml)
 
@@ -37,17 +39,8 @@ Although the object is in the global scope, it is not available until after the 
 ```js
 document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
-    // get device info must call init function
-    device.init(
-        (info) => {
-            console.log(info);
-            // or
-            console.log(device);
-        },
-        e => {
-            console.log("device init error", e);   
-        }
-    )
+   // can't get uuid, you should generated it by your self.
+   console.log(device)
 }
 ```
 
