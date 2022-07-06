@@ -45,7 +45,9 @@ function Device () {
     this.serial = null;
     this.isiOSAppOnMac = null;
     
-    channel.onCordovaReady.fire();
+    channel.onCordovaReady.subscribe(function () {
+        channel.onCordovaReady.fire();
+    });
 }
 
 /**
